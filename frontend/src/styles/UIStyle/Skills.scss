@@ -1,0 +1,39 @@
+@import '../../App.scss';
+
+.skills {
+  background-color: $color2;
+  width: 100%;
+  @include center(center, center);
+
+  > .skill-block {
+    width: 68%;
+    @include center(flex-start, space-between);
+    flex-direction: column;
+
+    > .skill-heading {
+      @include heading;
+    }
+
+    > .skill-box {
+      width: 100%;
+      padding: 5rem 0;
+      // background-color: lightgoldenrodyellow;
+      @include center(center, space-between);
+      flex-wrap: wrap;
+
+      .skill-img {
+        width: 8rem;
+        height: 8rem;
+        margin: 1rem;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .skills {
+    > .skill-block {
+      width: 100%;
+    }
+  }
+}

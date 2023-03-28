@@ -1,0 +1,13 @@
+@import '../../App.scss';
+
+.error {
+  @include secBox;
+  height: 50vh;
+  background-color: $color2;
+
+  .error-line {
+    font-size: 4rem;
+    color: $color1;
+    font-weight: 500;
+  }
+}

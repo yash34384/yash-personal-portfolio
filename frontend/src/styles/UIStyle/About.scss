@@ -1,0 +1,38 @@
+@import '../../App.scss';
+
+.about {
+  @include secBox;
+  padding-left: 30rem;
+  padding-right: 30rem;
+
+  .about-me {
+    width: 100%;
+
+    > .about-head {
+      font-size: 5rem;
+      font-weight: 500;
+      padding: 3rem 0;
+      color: $color1;
+    }
+
+    > .about-data {
+      font-size: 2rem;
+      padding-bottom: 3rem;
+      color: $color1;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .about {
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .about {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}

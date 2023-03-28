@@ -1,0 +1,131 @@
+@import '../../App.scss';
+
+.pro {
+  @include secBox;
+
+  > .pro-heading {
+    @include secheading;
+  }
+
+  > .pro-Cate {
+    @include center(center, space-around);
+    margin: 5rem 0 10rem 0;
+
+    > .pro-CateBtn {
+      @include btn;
+      margin-right: 2rem;
+      cursor: pointer;
+    }
+    .pro-CateBtn:hover {
+      background-color: #012293;
+    }
+  }
+
+  > .pro-main {
+    width: 100%;
+    padding-left: 30rem;
+    padding-right: 5rem;
+    box-sizing: border-box;
+    @include center(center, space-around);
+    flex-direction: column;
+
+    > .pro-box {
+      width: 100%;
+      margin-bottom: 6rem;
+      @include center(center, flex-start);
+
+      > .pro-img {
+        width: 20rem;
+        height: 20rem;
+        border-radius: 1rem;
+        margin-right: 3rem;
+      }
+
+      > .pro-box-content {
+        width: 100%;
+        height: 20rem;
+        @include center(flex-start, space-around);
+        flex-direction: column;
+
+        > .pro-btns {
+          .pro-btn {
+            text-decoration: none;
+            color: white;
+            background-color: $btn;
+            font-size: 1.6rem;
+            font-weight: 500;
+            padding: 0.5rem 2rem;
+            border-radius: 1.4rem;
+            margin-right: 3rem;
+          }
+          .pro-btn:hover {
+            background-color: #012293;
+          }
+        }
+
+        > .pro-name {
+          font-size: 4rem;
+          font-weight: 600;
+          text-decoration: none;
+          color: $color1;
+        }
+
+        > .pro-tech,
+        .pro-category {
+          font-size: 1.8rem;
+          color: $color1;
+
+          > .pro-techName,
+          .pro-categoryName {
+            font-size: 1.8rem;
+            font-weight: 300;
+            color: $color1;
+          }
+        }
+      }
+    }
+  }
+  .empty {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .pro {
+    > .pro-main {
+      padding: 0 2rem;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .pro {
+    > .pro-Cate {
+      flex-direction: column;
+
+      > .pro-CateBtn {
+        margin-bottom: 1rem;
+      }
+    }
+
+    > .pro-main {
+      padding: 0 2rem;
+      @include center(center, center);
+
+      > .pro-box {
+        flex-direction: column;
+        width: 35rem;
+
+        > .pro-img {
+          width: 35rem;
+          margin-right: 0;
+        }
+
+        > .pro-box-content {
+          @include center(center, space-around);
+          height: 28rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+@import '../../App.scss';
+
+.login {
+  @include secBox;
+
+  > .login-head {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: $color1;
+    font-weight: 500;
+  }
+
+  > .login-form {
+    width: 50%;
+    @include center(center, center);
+    flex-direction: column;
+
+    > .login-input,
+    .login-submit {
+      font-size: 2rem;
+      padding: 1rem;
+      box-sizing: border-box;
+      width: 30rem;
+      height: 5rem;
+      margin-bottom: 2rem;
+      background-color: $color2;
+      color: $color1;
+      border: 1px solid $color1;
+      border-radius: 1.5rem;
+    }
+
+    > .login-submit {
+      cursor: pointer;
+      font-weight: 500;
+      color: $color2;
+      background-color: $btn;
+    }
+  }
+}

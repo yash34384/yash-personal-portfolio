@@ -1,0 +1,72 @@
+@import '../../App.scss';
+
+.cp {
+  background-color: $color2;
+  width: 100%;
+  @include center(center, center);
+  padding-top: 10rem;
+
+  > .cp-block {
+    width: 68%;
+    @include center(flex-start, space-between);
+    flex-direction: column;
+
+    > .cp-heading {
+      @include heading;
+    }
+
+    > .cp-box {
+      width: 100%;
+      padding: 5rem 0;
+      @include center(center, space-between);
+      flex-wrap: wrap;
+
+      > .cp-profile {
+        width: 23rem;
+        height: 30rem;
+        @include center(center, space-around);
+        flex-direction: column;
+
+        > .cp-img {
+          width: 23rem;
+          height: 18rem;
+          border-radius: 0.6rem;
+        }
+
+        > .cp-name {
+          font-size: 2rem;
+          font-weight: 500;
+        }
+
+        > .cp-btn {
+          @include btn;
+        }
+        .cp-btn:hover {
+          background-color: #012293;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .cp {
+    > .cp-block {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cp {
+    > .cp-block {
+      > .cp-box {
+        @include center(center, center);
+
+        > .cp-profile {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+  }
+}

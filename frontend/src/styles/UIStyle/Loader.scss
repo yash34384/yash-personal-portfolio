@@ -1,0 +1,15 @@
+@import '../../App.scss';
+
+.loader-main {
+  width: 100%;
+  height: 50vh;
+  @include center(center, center);
+  > .loader {
+    color: $color1;
+    font-size: 4rem;
+  }
+  > .loader-text {
+    font-size: 2rem;
+    color: $color1;
+  }
+}

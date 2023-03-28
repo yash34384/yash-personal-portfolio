@@ -1,0 +1,56 @@
+@import '../../App.scss';
+
+.ed {
+  @include secBox;
+  padding-left: 10rem;
+  padding-right: 10rem;
+
+  > .ed-main {
+    width: 100%;
+    @include center(center, center);
+    flex-direction: column;
+    margin-top: 5rem;
+
+    > .ed-head {
+      font-size: 5rem;
+      margin-bottom: 5rem;
+      font-weight: 500;
+      color: $color1;
+    }
+
+    > .ed-form {
+      width: 100%;
+      @include center(center, center);
+      flex-wrap: wrap;
+
+      .ed-label {
+        font-size: 2rem;
+        color: $color1;
+      }
+
+      .ed-input {
+        height: 2.5rem;
+        max-width: 100%;
+        max-height: 20rem;
+        border: 1px solid $borders;
+        margin: 1rem;
+        font-size: 1.8rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  > .log-out {
+    margin-top: 5rem;
+    @include btn;
+    background-color: red;
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .ed {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}

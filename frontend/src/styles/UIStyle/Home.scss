@@ -1,0 +1,121 @@
+@import '../../App.scss';
+
+.home {
+  margin-top: 7rem;
+  width: 100%;
+  background-color: $color2;
+  padding: 5rem 8rem 5rem 16rem;
+  box-sizing: border-box;
+  @include center(center, center);
+  flex-wrap: wrap-reverse;
+
+  .home-aside1 {
+    height: 40vh;
+    @include center(flex-start, space-between);
+    flex-direction: column;
+    padding-right: 8rem;
+    padding-left: 8rem;
+    margin-top: -8rem;
+    color: $color1;
+
+    > .home-intro {
+      font-size: 6rem;
+      font-weight: 600;
+    }
+    .home-tags {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    > .home-resume {
+      @include btn;
+    }
+    .home-resume:hover {
+      background-color: #012293;
+    }
+  }
+
+  .home-aside2 {
+    // background-color: lightgreen;
+    height: 100vh;
+    width: 60%;
+    @include center(center, center);
+
+    .home-pic-container {
+      height: 40rem;
+      width: 40rem;
+      margin-top: -6rem;
+      position: relative;
+    }
+    .home-pic {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+    .home-pic-container::before {
+      content: '';
+      width: 128%;
+      height: 128%;
+      top: -14%;
+      left: -14%;
+      position: absolute;
+      border: 2px dashed $borders;
+      border-radius: 50%;
+    }
+    .home-pic-container::after {
+      content: '';
+      width: 168%;
+      height: 168%;
+      top: -34%;
+      left: -34%;
+      position: absolute;
+      border: 2px dashed $borders;
+      border-radius: 50%;
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .home {
+    padding: 5rem 0;
+    margin-top: 0;
+    flex-direction: column-reverse;
+
+    > .home-aside1 {
+      padding-right: 0;
+      padding-left: 0;
+      margin-top: 0;
+      height: 30rem;
+      @include center(center, space-between);
+    }
+
+    > .home-aside2 {
+      height: 80vh;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .home {
+    .home-aside2 {
+      .home-pic-container {
+        height: 30rem;
+        width: 30rem;
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .home {
+    .home-aside2 {
+      height: 50vh;
+      .home-pic-container {
+        height: 20rem;
+        width: 20rem;
+        margin-top: 0;
+      }
+    }
+  }
+}

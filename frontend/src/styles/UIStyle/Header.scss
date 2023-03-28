@@ -1,0 +1,122 @@
+@import '../../App.scss';
+
+// options css and its hover effect
+@mixin buttons {
+  .btn {
+    font-size: 1.7rem;
+    text-decoration: none;
+    margin-right: 5rem;
+    color: $color1;
+    font-weight: 500;
+    padding-bottom: 4px;
+    position: relative;
+  }
+  .btn.btn-background-slide::before {
+    content: '';
+    position: absolute;
+    top: 90%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    background-color: $color1;
+    transition: transform 300ms ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  .btn.btn-background-slide:hover::before {
+    transform: scaleX(0.4);
+  }
+  .btn.btn-background-slide {
+    transition: color 300ms ease-in-out;
+    z-index: 1;
+  }
+  .fa-moon {
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .fa-moon:hover {
+    color: $btn;
+  }
+}
+
+// nav bar css
+nav {
+  width: 100%;
+  height: 8rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: $color2;
+  transition: all 300ms ease-in-out;
+  z-index: 1000;
+
+  @include center(center, space-around);
+  @include logo;
+  @include buttons;
+}
+
+// hamburger icon css
+.bar-icon {
+  font-size: 3rem;
+  cursor: pointer;
+}
+.bar-icon:hover {
+  color: $btn;
+}
+
+// mobile view box css
+.options-sec-mobile {
+  position: fixed;
+  top: 6rem;
+  right: 3rem;
+  width: 20rem;
+  height: 20rem;
+  background-color: $color2;
+  box-shadow: 0 4px 10px rgb(0 0 0 / 0.5);
+  border-radius: 2rem;
+  box-sizing: border-box;
+  padding: 2rem 2rem;
+  @include buttons;
+  @include center(flex-start, space-around);
+  flex-direction: column;
+  transition: all 200ms ease-in-out;
+  z-index: 1000;
+}
+
+// to hide the box intially
+.hideBox {
+  opacity: 0;
+}
+
+// to change border and height on scroll of navbar
+.borderBox {
+  border-bottom: 1px solid $borders;
+  height: 7rem;
+}
+
+// media query when screen>901px
+@media screen and (min-width: 901px) {
+  .bar-icon,
+  .options-sec-mobile {
+    display: none;
+  }
+}
+
+// media query when screen<900px
+@media screen and (max-width: 900px) {
+  nav {
+    @include center(center, space-between);
+  }
+  .logo-sec {
+    margin-left: 5rem;
+  }
+  .options-sec-web {
+    display: none;
+  }
+  .bar-icon {
+    margin-right: 5rem;
+    display: block;
+  }
+}
