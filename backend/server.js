@@ -17,7 +17,7 @@ cloudinary.config({
   api_secret: process.env.CLOUD_SECRET
 });
 
-// starting server 
+// starting server
 app.listen(process.env.PORT_NUMBER, () => {
   console.log(`server is running on port: ${process.env.PORT_NUMBER}`)
 })
