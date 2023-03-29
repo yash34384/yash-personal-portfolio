@@ -3,6 +3,7 @@ const app = express();
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
+const path = require('path');
 
 app.use(express.json());
 app.use(cookieParser());
@@ -23,5 +24,10 @@ app.use("/api/v1", resume);
 
 const login = require('./routes/LoginRoute');
 app.use("/api/v1", login);
+
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "../frontend/dist/index.html"));
+})
 
 module.exports = app;
