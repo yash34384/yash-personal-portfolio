@@ -58,7 +58,7 @@ const Home = ({ resumeData }) => {
                   <p className="home-tags">{tags[1]}.</p>
                 </article>
                 <a href={resumeData} target="blank" className="home-resume">
-                  CheckOut my Resume
+                  Check my Resume
                 </a>
                 <p className="footer-social">
                   <SocialMediaLink />
